@@ -1,2 +1,2 @@
-source /Users/aldored/Desktop/iot/test/build/gdbinit/symbols
-source /Users/aldored/Desktop/iot/test/build/gdbinit/connect
+source /Users/aldored/Desktop/Repos/iot-software/test/build/gdbinit/symbols
+source /Users/aldored/Desktop/Repos/iot-software/test/build/gdbinit/connect

@@ -39,12 +39,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/aldored/Desktop/iot/test/build/bootloader/esp-idf/esp_hw_support/port/esp32/cmake_install.cmake")
+  include("/Users/aldored/Desktop/Repos/iot-software/test/build/bootloader/esp-idf/esp_hw_support/port/esp32/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/aldored/Desktop/iot/test/build/bootloader/esp-idf/esp_hw_support/install_local_manifest.txt"
+  file(WRITE "/Users/aldored/Desktop/Repos/iot-software/test/build/bootloader/esp-idf/esp_hw_support/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

@@ -10,18 +10,18 @@ if(NOT EXISTS "/Users/aldored/esp/esp-idf/components/bootloader/subproject")
   file(MAKE_DIRECTORY "/Users/aldored/esp/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "/Users/aldored/Desktop/iot/test/build/bootloader"
-  "/Users/aldored/Desktop/iot/test/build/bootloader-prefix"
-  "/Users/aldored/Desktop/iot/test/build/bootloader-prefix/tmp"
-  "/Users/aldored/Desktop/iot/test/build/bootloader-prefix/src/bootloader-stamp"
-  "/Users/aldored/Desktop/iot/test/build/bootloader-prefix/src"
-  "/Users/aldored/Desktop/iot/test/build/bootloader-prefix/src/bootloader-stamp"
+  "/Users/aldored/Desktop/Repos/iot-software/test/build/bootloader"
+  "/Users/aldored/Desktop/Repos/iot-software/test/build/bootloader-prefix"
+  "/Users/aldored/Desktop/Repos/iot-software/test/build/bootloader-prefix/tmp"
+  "/Users/aldored/Desktop/Repos/iot-software/test/build/bootloader-prefix/src/bootloader-stamp"
+  "/Users/aldored/Desktop/Repos/iot-software/test/build/bootloader-prefix/src"
+  "/Users/aldored/Desktop/Repos/iot-software/test/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/Users/aldored/Desktop/iot/test/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/Users/aldored/Desktop/Repos/iot-software/test/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/Users/aldored/Desktop/iot/test/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/Users/aldored/Desktop/Repos/iot-software/test/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

@@ -22,4 +22,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file /Users/aldored/Desktop/iot/test/build/bootloader/bootloader.elf
+file /Users/aldored/Desktop/Repos/iot-software/test/build/bootloader/bootloader.elf

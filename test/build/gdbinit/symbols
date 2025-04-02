@@ -18,8 +18,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file /Users/aldored/Desktop/iot/test/build/bootloader/bootloader.elf
+    add-symbol-file /Users/aldored/Desktop/Repos/iot-software/test/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file /Users/aldored/Desktop/iot/test/build/test.elf
+file /Users/aldored/Desktop/Repos/iot-software/test/build/test.elf
