@@ -1,0 +1,2 @@
+source /Users/aldored/Desktop/iot/test/build/bootloader/gdbinit/symbols
+source /Users/aldored/Desktop/iot/test/build/bootloader/gdbinit/connect

@@ -1,0 +1,244 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Mar 26 2025 19:09:06[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=09854h ( 38996) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=0001987c vaddr=3ffb0000 size=02274h (  8820) load[0m
+[0;32mI (121) esp_image: segment 2: paddr=0001baf8 vaddr=40080000 size=04520h ( 17696) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=13c38h ( 80952) map[0m
+[0;32mI (159) esp_image: segment 4: paddr=00033c60 vaddr=40084520 size=08148h ( 33096) load[0m
+[0;32mI (179) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (179) boot: Disabling RNG early entropy source...[0m
+[0;32mI (190) cpu_start: Multicore app[0m
+[0;32mI (200) cpu_start: Pro cpu start user code[0m
+[0;32mI (200) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (200) cpu_start: Application information:[0m
+[0;32mI (203) cpu_start: Project name:     test[0m
+[0;32mI (207) cpu_start: App version:      1[0m
+[0;32mI (212) cpu_start: Compile time:     Mar 26 2025 19:09:01[0m
+[0;32mI (218) cpu_start: ELF file SHA256:  fe7cfa7dd...[0m
+[0;32mI (223) cpu_start: ESP-IDF:          v5.2.5[0m
+[0;32mI (228) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (233) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (238) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (243) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (250) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFB2B50 len 0002D4B0 (181 KiB): DRAM[0m
+[0;32mI (262) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (268) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (275) heap_init: At 4008C668 len 00013998 (78 KiB): IRAM[0m
+[0;32mI (282) spi_flash: detected chip: generic[0m
+[0;32mI (286) spi_flash: flash io: dio[0m
+[0;33mW (290) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (303) main_task: Started on CPU0[0m
+[0;32mI (313) main_task: Calling app_main()[0m
+[0;32mI (313) TEST: Luz verde peatonal encendida[0m
+[0;32mI (1313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (2313) TEST: Luz verde peatonal encendida[0m
+[0;32mI (3313) TEST: Luz verde peatonal encendida[0m
+[0;32mI (4313) TEST: Luz verde peatonal encendida[0m
+[0;32mI (5313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (6313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (7313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (8313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (9313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (10313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (11313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (12313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (13313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (14313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (15313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (16313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (17313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (18313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (19313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (20313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (21313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (22313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (23313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (24313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (25313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (26313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (27313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (28313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (29313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (30313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (31313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (32313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (33313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (34313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (35313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (36313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (37313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (38313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (39313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (40313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (41313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (42313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (43313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (44313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (45313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (46313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (47313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (48313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (49313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (50313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (51313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (52313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (53313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (54313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (55313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (56313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (57313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (58313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (59313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (60313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (61313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (62313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (63313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (64313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (65313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (66313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (67313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (68313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (69313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (70313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (71313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (72313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (73313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (74313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (75313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (76313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (77313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (78313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (79313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (80313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (81313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (82313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (83313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (84313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (85313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (86313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (87313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (88313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (89313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (90313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (91313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (92313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (93313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (94313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (95313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (96313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (97313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (98313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (99313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (100313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (101313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (102313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (103313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (104313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (105313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (106313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (107313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (108313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (109313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (110313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (111313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (112313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (113313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (114313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (115313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (116313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (117313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (118313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (119313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (120313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (121313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (122313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (123313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (124313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (125313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (126313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (127313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (128313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (129313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (130313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (131313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (132313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (133313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (134313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (135313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (136313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (137313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (138313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (139313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (140313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (141313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (142313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (143313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (144313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (145313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (146313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (147313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (148313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (149313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (150313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (151313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (152313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (153313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (154313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (155313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (156313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (157313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (158313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (159313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (160313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (161313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (162313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (163313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (164313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (165313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (166313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (167313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (168313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (169313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (170313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (171313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (172313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (173313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (174313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (175313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (176313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (177313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (178313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (179313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (180313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (181313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (182313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (183313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (184313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (185313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (186313) TEST: Luz Roja peatonal encendida[0m
+[0;32mI (187313) TEST: Luz Roja peatonal encendida[0m
