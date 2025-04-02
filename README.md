@@ -1,5 +1,12 @@
 # iot-software
 
+# Levantamiento de IDF
+
+## Paso 1
+```bash
+source ~/esp/esp-idf/export.sh
+```
+
 # Documentación de ESP32 en C
 
 ## 📚 Recursos Oficiales de Documentación
