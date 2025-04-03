@@ -2,10 +2,14 @@
 
 # Levantamiento de IDF
 
-## Paso 1
+## Ejecutar el siguiente comando para levantar el entorno de desarrollo de ESP-IDF:
 ```bash
 source ~/esp/esp-idf/export.sh
 ```
+
+# Pinlayout de ESP32
+
+![pin layout](./imgs/pinlayout.png)
 
 # Documentación de ESP32 en C
 
