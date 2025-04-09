@@ -3,8 +3,23 @@
 # Levantamiento de IDF
 
 ## Ejecutar el siguiente comando para levantar el entorno de desarrollo de ESP-IDF:
+
 ```bash
 source ~/esp/esp-idf/export.sh
+```
+
+## Monitor
+
+Enter to monitor
+
+```bash
+idf.py monitor
+```
+
+Exit to monitor
+
+```bash
+ctrl + ]
 ```
 
 # Pinlayout de ESP32
@@ -16,15 +31,18 @@ source ~/esp/esp-idf/export.sh
 ## 📚 Recursos Oficiales de Documentación
 
 ### 1. Documentación Oficial de Espressif
+
 - [ESP-IDF API Reference](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/index.html)
 - [Guía de Programación de ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
 
 ### 2. Repositorios de Ejemplos
+
 - [Ejemplos Oficiales de ESP-IDF](https://github.com/espressif/esp-idf/tree/master/examples)
 
 ## 🔧 Bibliotecas Principales
 
 ### Bibliotecas Fundamentales
+
 - `esp_system.h`: Funciones del sistema
 - `driver/gpio.h`: Control de GPIO
 - `freertos/FreeRTOS.h`: Sistema de tiempo real
@@ -35,6 +53,7 @@ source ~/esp/esp-idf/export.sh
 ## 📖 Referencias Detalladas
 
 ### 1. GPIO (Entrada/Salida de Propósito General)
+
 ```c
 #include "driver/gpio.h"
 
@@ -57,6 +76,7 @@ gpio_config(&io_conf);
 ```
 
 ### 2. Registro y Logging
+
 ```c
 #include "esp_log.h"
 
@@ -70,6 +90,7 @@ ESP_LOGD(TAG, "Mensaje de depuración");
 ```
 
 ### 3. Tareas y Multitarea (FreeRTOS)
+
 ```c
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -93,6 +114,7 @@ xTaskCreate(
 ```
 
 ### 4. Comunicación Serial (UART)
+
 ```c
 #include "driver/uart.h"
 
@@ -108,6 +130,7 @@ uart_param_config(UART_NUM_0, &uart_config);
 ```
 
 ### 5. WiFi
+
 ```c
 #include "esp_wifi.h"
 #include "esp_event.h"
@@ -142,18 +165,22 @@ idf.py clean
 ## 📚 Recursos Adicionales de Aprendizaje
 
 ### Libros y Cursos
+
 - "ESP32 Programming by Example" - Libro
 - Cursos en Udemy y Coursera sobre ESP32
 
 ### Comunidades
+
 - [Foro Oficial de Espressif](https://www.esp32.com/)
 - Grupos de Telegram y Discord de ESP32
 
 ## 🔗 Links Importantes
+
 - [Documentación Oficial de ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/)
 - [Repositorio de GitHub de ESP-IDF](https://github.com/espressif/esp-idf)
 
 ## ⚠️ Consejos Finales
+
 - Siempre use `ESP_ERROR_CHECK()` para manejar errores
 - Aproveche FreeRTOS para programación concurrente
 - Consulte constantemente la documentación oficial
