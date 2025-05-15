@@ -88,8 +88,7 @@ void app_main(void) {
   // Main loop: read voltages and show L/R
   uint8_t buf[BUF_SIZE];
   while (1) {
-    int len =
-        uart_read_bytes(UARTx, buf, BUF_SIZE - 1, pdMS_TO_TICKS(portMAX_DELAY));
+    int len = uart_read_bytes(UARTx, buf, BUF_SIZE - 1, pdMS_TO_TICKS(1000));
     if (len > 0) {
       buf[len] = '\0';
       float v;

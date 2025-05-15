@@ -27,6 +27,7 @@ static void uart_event_task(void *pv) {
   while (1) {
     int len = uart_read_bytes(UARTx, buf, BUF_SIZE - 1, pdMS_TO_TICKS(1000));
     if (len > 0) {
+      ESP_LOGI(TAG, "len=%d", len);
       buf[len] = '\0';
       ESP_LOGI(TAG, "RX cmd: '%s'", buf);
       if (strncmp((char *)buf, "START", 5) == 0) {
@@ -65,13 +66,14 @@ void app_main(void) {
   // Main loop: sample & send
   char msg[64];
   while (1) {
-    if (sending) {
+    if (1 == 1) {
       int raw = adc1_get_raw(ADC_CHANNEL);
       float voltage = raw * (3.3f / 4095.0f);
+      ESP_LOGI(TAG, "ADC raw: %d", raw);
       int len = snprintf(msg, sizeof(msg), "VOLT:%.3f\n", voltage);
       uart_write_bytes(UARTx, msg, len);
       ESP_LOGI(TAG, "TX → %s", msg);
     }
-    vTaskDelay(pdMS_TO_TICKS(250));
+    vTaskDelay(pdMS_TO_TICKS(1000));
   }
 }
