@@ -95,9 +95,7 @@ static void init_uart(void) {
   ESP_LOGI(TAG, "UART initialized");
 }
 
-void app_main(void) {
-  init_uart();
-
+static void init_dotmatrix(void) {
   i2c_config_t ic = {.mode = I2C_MODE_MASTER,
                      .sda_io_num = SDA_PIN,
                      .scl_io_num = SCL_PIN,
@@ -109,6 +107,12 @@ void app_main(void) {
   // Init display
   ht16k33_init();
   ht16k33_draw((uint8_t[8]){0}); // clear
+  ESP_LOGI(TAG, "HT16K33 initialized");
+}
+
+void app_main(void) {
+  init_uart();
+  init_dotmatrix();
 
   // Main loop: read voltages and show L/R
   uint8_t buf[BUF_SIZE];
