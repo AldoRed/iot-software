@@ -8,12 +8,10 @@
 
 static const char *TAG = "ESP_B";
 
-// UART1 on GPIO17/16
-#define UARTx UART_NUM_1
-#define TX_PIN GPIO_NUM_17
-#define RX_PIN GPIO_NUM_16
-#define BAUD_RATE 115200
+// UART2
+#define UART_NUM UART_NUM_2
 #define BUF_SIZE 1024
+#define TASK_MEMORY 1024 * 2
 
 // I2C for HT16K33 on GPIO21/22
 #define I2C_PORT I2C_NUM_0
@@ -49,24 +47,57 @@ static void ht16k33_draw(const uint8_t *bmp) {
   }
   i2c_master_write_to_device(I2C_PORT, HT16K33_ADDR, data, sizeof(data),
                              pdMS_TO_TICKS(100));
+  ESP_LOGI(TAG, "HT16K33 display updated");
 }
 
-void app_main(void) {
-  // UART2 setup
-  uart_config_t uc = {
-      .baud_rate = BAUD_RATE,
+static void uart_task(void *pv) {
+  uint8_t *data = (uint8_t *)malloc(BUF_SIZE);
+  while (1) {
+    // each 1000 ms write "START" to UART && wait for response
+    uart_write_bytes(UART_NUM, "START\n", 6);
+    ESP_LOGI(TAG, "Sent START command");
+    int len =
+        uart_read_bytes(UART_NUM, data, BUF_SIZE - 1, pdMS_TO_TICKS(1000));
+    if (len > 0) {
+      ESP_LOGI(TAG, "len=%d", len);
+      data[len] = '\0';
+      ESP_LOGI(TAG, "RX cmd: '%s'", data);
+      if (strncmp((char *)data, "START", 5) == 0) {
+        uart_write_bytes(UART_NUM, "ACK: START\n", 11);
+        ESP_LOGI(TAG, "→ START");
+      } else if (strncmp((char *)data, "STOP", 4) == 0) {
+        uart_write_bytes(UART_NUM, "ACK: STOP\n", 10);
+        ESP_LOGI(TAG, "→ STOP");
+      } else {
+        ESP_LOGW(TAG, "Unknown command: %s", data);
+      }
+    }
+    vTaskDelay(pdMS_TO_TICKS(100));
+  }
+}
+
+static void init_uart(void) {
+  uart_config_t uart_config = {
+      .baud_rate = 115200,
       .data_bits = UART_DATA_8_BITS,
       .parity = UART_PARITY_DISABLE,
       .stop_bits = UART_STOP_BITS_1,
-      .flow_ctrl = UART_HW_FLOWCTRL_CTS_RTS,
-      .rx_flow_ctrl_thresh = 122,
+      .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
+      .source_clk = UART_SCLK_APB,
   };
-  ESP_ERROR_CHECK(uart_param_config(UARTx, &uc));
-  ESP_ERROR_CHECK(uart_set_pin(UARTx, TX_PIN, RX_PIN, UART_PIN_NO_CHANGE,
-                               UART_PIN_NO_CHANGE));
-  ESP_ERROR_CHECK(uart_driver_install(UARTx, BUF_SIZE, BUF_SIZE, 0, NULL, 0));
+  ESP_ERROR_CHECK(uart_param_config(UART_NUM, &uart_config));
+  ESP_ERROR_CHECK(
+      uart_set_pin(UART_NUM, 5, 4, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE));
+  ESP_ERROR_CHECK(
+      uart_driver_install(UART_NUM, BUF_SIZE, BUF_SIZE, 0, NULL, 0));
 
-  // I2C setup
+  xTaskCreate(uart_task, "uart_task", TASK_MEMORY, NULL, 10, NULL);
+  ESP_LOGI(TAG, "UART initialized");
+}
+
+void app_main(void) {
+  init_uart();
+
   i2c_config_t ic = {.mode = I2C_MODE_MASTER,
                      .sda_io_num = SDA_PIN,
                      .scl_io_num = SCL_PIN,
@@ -75,20 +106,14 @@ void app_main(void) {
                      .master.clk_speed = 100000};
   ESP_ERROR_CHECK(i2c_param_config(I2C_PORT, &ic));
   ESP_ERROR_CHECK(i2c_driver_install(I2C_PORT, ic.mode, 0, 0, 0));
-
   // Init display
   ht16k33_init();
   ht16k33_draw((uint8_t[8]){0}); // clear
 
-  // Tell ESP-A to start
-  const char *start = "START\n";
-  uart_write_bytes(UARTx, start, strlen(start));
-  ESP_LOGI(TAG, "TX cmd → START");
-
   // Main loop: read voltages and show L/R
   uint8_t buf[BUF_SIZE];
   while (1) {
-    int len = uart_read_bytes(UARTx, buf, BUF_SIZE - 1, pdMS_TO_TICKS(1000));
+    int len = uart_read_bytes(UART_NUM, buf, BUF_SIZE - 1, pdMS_TO_TICKS(1000));
     if (len > 0) {
       buf[len] = '\0';
       float v;
